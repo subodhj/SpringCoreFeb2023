@@ -12,7 +12,8 @@ public class SetterInjectionTest {
 		
 		FileSystemResource resource = null;
 		BeanFactory factory = null;
-		Object obj = null;
+		Object obj1 = null;
+		Object obj2 = null;
 		WishMessageGenerator wishMG = null;
 		String result = null;
 
@@ -23,16 +24,21 @@ public class SetterInjectionTest {
 		factory = new XmlBeanFactory(resource);
 		
 		// get target class object
-		obj = factory.getBean("wmg");
+		obj1 = factory.getBean("wmg");
+		obj2 = factory.getBean("wmg");
 		
 		// type casting
-		wishMG = (WishMessageGenerator) obj;
+		wishMG = (WishMessageGenerator) obj1;
 		
 		// invoke business method
 		result = wishMG.generateWishMessage();
 		
 		// display the result
 		System.out.println(result);
+		
+		System.out.println(obj1.hashCode()+" "+obj2.hashCode());
+		System.out.println("obj1 == obj2 ? "+(obj1 == obj2));
+		
 
 	}
 
