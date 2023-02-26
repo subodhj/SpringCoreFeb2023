@@ -12,6 +12,7 @@ public class WishMessageGenerator {
 
 	public void setDate(Date date) {
 		this.date = date;
+		System.out.println("Date class obj holds system date -> " + date);
 		System.out.println("WishMessageGenerator : setDate(-)");
 	}
 
