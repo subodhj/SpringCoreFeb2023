@@ -1,0 +1,39 @@
+package com.nt.test;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.FileSystemResource;
+
+import com.nt.beans.WishMessageGenerator;
+
+public class SetterInjectionTest {
+
+	public static void main(String[] args) {
+		
+		FileSystemResource resource = null;
+		BeanFactory factory = null;
+		Object obj = null;
+		WishMessageGenerator wishMG = null;
+		String result = null;
+
+		// hold and locate spring bean configuration file
+		resource = new FileSystemResource("src/com/nt/cfgs/applicationContext.xml");
+		
+		// create ioc container
+		factory = new XmlBeanFactory(resource);
+		
+		// get target class object
+		obj = factory.getBean("wmg");
+		
+		// type casting
+		wishMG = (WishMessageGenerator) obj;
+		
+		// invoke business method
+		result = wishMG.generateWishMessage();
+		
+		// display the result
+		System.out.println(result);
+
+	}
+
+}
