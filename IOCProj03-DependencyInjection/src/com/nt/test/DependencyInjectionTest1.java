@@ -6,7 +6,7 @@ import org.springframework.core.io.FileSystemResource;
 
 import com.nt.beans.WishMessageGenerator;
 
-public class DependencyInjectionTest {
+public class DependencyInjectionTest1 {
 
 	public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class DependencyInjectionTest {
 		String result = null;
 
 		// hold and locate spring bean configuration file
-		resource = new FileSystemResource("src/com/nt/cfgs/applicationContext.xml");
+		resource = new FileSystemResource("src/com/nt/cfgs/applicationContext1.xml");
 
 		// create ioc container
 		factory = new XmlBeanFactory(resource);
