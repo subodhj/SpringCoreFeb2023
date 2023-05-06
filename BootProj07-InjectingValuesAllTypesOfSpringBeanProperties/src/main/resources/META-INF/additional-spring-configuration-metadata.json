@@ -1,0 +1,152 @@
+{"properties": [
+  {
+    "name": "info.emp.name",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.name'"
+  },
+  {
+    "name": "info.emp.age",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.age'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[1]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[1]'"
+  },
+  {
+    "name": "info.emp.alias[2]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[2]'"
+  },
+  {
+    "name": "info.emp.collegues[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.collegues[0]'"
+  },
+  {
+    "name": "info.emp.collegues[1]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.collegues[1]'"
+  },
+  {
+    "name": "info.emp.collegues[2]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.collegues[2]'"
+  },
+  {
+    "name": "info.emp.mobileNumbers[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.mobileNumbers[0]'"
+  },
+  {
+    "name": "info.emp.mobile-numbers[1]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.mobile-numbers[1]'"
+  },
+  {
+    "name": "info.emp.mobile-numbers[2]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.mobile-numbers[2]'"
+  },
+  {
+    "name": "info.emp.idDetails.aadhaarNo",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.idDetails.aadhaarNo'"
+  },
+  {
+    "name": "info.emp.id-details.voterId",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.id-details.voterId'"
+  },
+  {
+    "name": "info.emp.id-details.panNo",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.id-details.panNo'"
+  },
+  {
+    "name": "info.emp.id-details.voterId",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.id-details.voterId'"
+  },
+  {
+    "name": "info.emp.id-details.voterId",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.id-details.voterId'"
+  },
+  {
+    "name": "info.emp.id-details.voterId",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.id-details.voterId'"
+  },
+  {
+    "name": "info.emp.company.title",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.company.title'"
+  },
+  {
+    "name": "info.emp.company.location",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.company.location'"
+  },
+  {
+    "name": "info.emp.company.size",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.company.size'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  },
+  {
+    "name": "info.emp.alias[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'info.emp.alias[0]'"
+  }
+]}

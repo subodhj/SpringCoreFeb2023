@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: "prod"
+---
+spring:
+  config:
+    activate:
+      on-profile: dev 
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql:///ntspbms714db
+    username: root
+---
+spring:
+  config:
+    activate:
+      on-profile: test  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    url: jdbc:mysql:///ntspbms714db
+    username: root
+---
+spring:
+  config:
+    activate:
+      on-profile: uat  
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: tiger
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: scott
+---
+spring:
+  config:
+    activate:
+      on-profile: prod  
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: tiger
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: scott
+    

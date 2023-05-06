@@ -1,0 +1,31 @@
+# String type property simple type
+info:
+   emp:
+      name: Krishna
+      # int type property simple type
+      age: 22 
+      # array type property
+      alias: #[kannaiah,madhusudana,krishnaiah]
+         - kanna
+         - madhusudana
+         - krishnaiah
+      # List type propery
+      collegues: 
+         - Sarthaki
+         - Yuyuthsu
+         - Sarthaki
+      # Set type property
+      mobile-numbers: 
+         - 9999999999
+         - 8888888888
+         - 7777777777
+      # Map type property
+      idDetails:
+         aadhaarNo: 457938474843
+         panNo: A89Y70P399B
+         voterId: 7939278282
+      # HAS-A property
+      company:
+         title: TechMahindra
+         location: Noida
+         size: 1000
