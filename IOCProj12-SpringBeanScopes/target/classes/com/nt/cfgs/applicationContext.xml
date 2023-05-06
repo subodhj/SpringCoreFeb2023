@@ -1,0 +1,24 @@
+<!-- xml prolog indicating that the document is XML document -->
+<beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- dependent bean configuration -->
+	<bean id="dt" class="java.util.Date" />
+
+	<!-- target bean configuration -->
+	<!-- <bean id="wmg" class="com.nt.beans.WishMessageGenerator" scope="singleton"> -->
+	<bean id="wmg1" class="com.nt.beans.WishMessageGenerator" lazy-init="default">
+		<property name="date" ref="dt" />
+	</bean>
+
+	<bean id="wmg2" class="com.nt.beans.WishMessageGenerator" scope="prototype">
+		<property name="date" ref="dt" />
+	</bean>
+
+	<!-- <bean id="p1" class="com.nt.beans.Printer" factory-method="getInstance"/>
+
+	<bean id="p2" class="com.nt.beans.Printer" factory-method="getInstance"/> -->
+
+</beans>

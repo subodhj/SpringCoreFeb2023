@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- DataSource cfg for Oracle -->
+	<bean id="dmds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+
+	<!-- CustomerOracleDAO cfg -->
+	<bean id="oracleDAO" class="com.nt.dao.CustomerOracleDAOImpl">
+		<constructor-arg name="dataSource" ref="dmds" />
+	</bean>
+
+	<!-- CustomerMySQLDAO cfg -->
+	<bean id="mySqlDAO" class="com.nt.dao.CustomerMySQLDAOImpl">
+		<property name="osName" value="${os.name}" />
+		<property name="osVersion" value="${os.version}" />
+		<property name="userName" value="${user.name}" />
+		<property name="pathData" value="${Path}" />
+		<constructor-arg name="dataSource" ref="dmds" />
+	</bean>
+
+	<!-- CustomerService cfg -->
+	<bean id="service" class="com.nt.service.CustomerServiceImpl">
+		<constructor-arg name="customerDAO"
+			ref="${service.customerDAO}" />
+	</bean>
+
+	<!-- MainController cfg -->
+	<bean id="ctrl" class="com.nt.controller.MainController">
+		<constructor-arg name="customerService" ref="service" />
+	</bean>
+
+	<context:property-placeholder
+		location="com/nt/commons/jdbc.properties, com/nt/commons/jdbc2.properties" />
+
+</beans>
