@@ -13,22 +13,23 @@ import com.nt.service.ICoronaVaccineMgmtService;
 public class DataJpa01CrudRepositoryApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = null;
+		SpringApplication.run(DataJpa01CrudRepositoryApplication.class, args);
+		/*ApplicationContext ctx = null;
 		ICoronaVaccineMgmtService service = null;
 		CoronaVaccine coronaVaccine = null;
-
+		
 		// Access IOC container.
 		ctx = SpringApplication.run(DataJpa01CrudRepositoryApplication.class, args);
-
+		
 		// Access service class object.
-//		service = ctx.getBean("cvmService", CoronaVaccineMgmtServiceImpl.class);
+		//		service = ctx.getBean("cvmService", CoronaVaccineMgmtServiceImpl.class);
 		service = ctx.getBean("cvmService", ICoronaVaccineMgmtService.class);
 		try {
 			// Create entity class object.
-//			coronaVaccine = new CoronaVaccine(5L, "Covaxin25.0", "BharatBiotech", "India", 700.0, 2);
-//			coronaVaccine = new CoronaVaccine(null, "Covaxin25.0", "BharatBiotech", "India", 700.0, 2);
+		//			coronaVaccine = new CoronaVaccine(5L, "Covaxin25.0", "BharatBiotech", "India", 700.0, 2);
+		//			coronaVaccine = new CoronaVaccine(null, "Covaxin25.0", "BharatBiotech", "India", 700.0, 2);
 			coronaVaccine = new CoronaVaccine("Covaxin", "BharatBiotech", "India", 700.0, 2);
-
+		
 			// Invoke b.logic.
 			System.out.println(service.registerCoronaVaccine(coronaVaccine));
 		} catch (DataAccessException dae) {
@@ -38,7 +39,7 @@ public class DataJpa01CrudRepositoryApplication {
 		} finally {
 			// Close IOC container
 			((AbstractApplicationContext) ctx).close();
-		}
+		}*/
 	}// main(-)
 
 }// class
