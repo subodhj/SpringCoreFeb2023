@@ -44,7 +44,7 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 			// 10. Delete multiple records by list of ids.
 //			System.out.println(service.removeAllCoronaVaccinesById(List.of(202L, 252L)));
 //			System.out.println(service.removeAllCoronaVaccinesById(List.of(202L, 200L, 252L)));
-//			System.out.println(service.removeAllCoronaVaccinesById(Arrays.asList(202L, 200L, 252L)));
+			System.out.println(service.removeAllCoronaVaccinesById(Arrays.asList(203L, 200L, 204L)));
 
 			// 9. Delete record by entity.
 //			CoronaVaccine coronaVaccine = new CoronaVaccine();
@@ -64,6 +64,7 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 			// 6. Finding multiple records by ids.
 //			service.searchAllCoronaVaccinesById(List.of(52L, 53L, 54L));
 //			service.searchAllCoronaVaccinesById(List.of(52L, 5L, 54L));
+//			service.searchAllCoronaVaccinesById(List.of(512L, 5L, 514L));
 
 			// 5. Finding all records.
 //			service.searchAllCoronaVaccines();
@@ -75,9 +76,9 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 //			System.out.println(service.getCoronaVaccinesCount());
 
 			// 2. Save multiple records (batch/bulk insertion).
-			/*service.registerCoronaVaccinesInBatch(List.of(new CoronaVaccine("Suptnik", "Rus", "Russia", 300.0, 2),
-					new CoronaVaccine("Pizer", "PizerLtd", "USA", 400.0, 2),
-					new CoronaVaccine("Moderna", "ModernaLtd", "USA", 500.0, 2)));*/
+			/*service.registerCoronaVaccinesInBatch(List.of(new CoronaVaccine("Suptnik", "Rus", "Russia", 350.0, 2),
+					new CoronaVaccine("Pizer", "PizerLtd", "USA", 450.0, 2),
+					new CoronaVaccine("Moderna", "ModernaLtd", "USA", 550.0, 2)));*/
 
 			/*service.registerCoronaVaccinesInBatch(Arrays.asList(new CoronaVaccine("Suptnik", "Rus", "Russia", 300.0, 2),
 					new CoronaVaccine("Pizer", "PizerLtd", "USA", 400.0, 2),
