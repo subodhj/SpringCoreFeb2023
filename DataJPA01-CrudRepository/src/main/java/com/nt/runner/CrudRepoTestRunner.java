@@ -87,7 +87,7 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 			// 1. Save single record.
 //			System.out.println(service.registerCoronaVaccine(new CoronaVaccine(5L, "Covaxin25.0", "BharatBiotech", "India", 700.0, 2)));
 //			System.out.println(service.registerCoronaVaccine(new CoronaVaccine(null, "Covaxin25.0", "BharatBiotech", "India", 700.0, 2)));
-//			System.out.println(service.registerCoronaVaccine(new CoronaVaccine("Covaxin1", "BharatBiotech", "India", 700.0, 2)));
+//			System.out.println(service.registerCoronaVaccine(new CoronaVaccine("Covaxin", "BharatBiotech", "India", 700.0, 2)));
 
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
