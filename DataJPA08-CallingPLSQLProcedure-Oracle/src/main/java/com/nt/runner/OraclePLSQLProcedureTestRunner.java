@@ -22,7 +22,7 @@ public class OraclePLSQLProcedureTestRunner implements CommandLineRunner {
 		try {
 
 			// 1. (JavaConfig) Get Corona Vaccines by calling PL/SQL Procedure.
-			service.getCoronaVaccinesByPriceRange(200, 300).forEach(System.out::println);
+//			service.getCoronaVaccinesByPriceRange(200, 300).forEach(System.out::println);
 //			service.getCoronaVaccinesByPriceRange(300, 400).forEach(System.out::println);
 //			service.getCoronaVaccinesByPriceRange(400, 500).forEach(System.out::println);
 //			service.getCoronaVaccinesByPriceRange(500, 700).forEach(System.out::println);
