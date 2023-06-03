@@ -136,12 +136,12 @@ public class OneToManyBiTestRunner implements CommandLineRunner {
 			// 11. Delete all Person records.
 //			System.out.println(service.deletePerson());
 
-//			System.out.println(service.deleteAllPhoneNumbersOfPerson(3252));
+//			System.out.println(service.deleteAllPhoneNumbersOfPerson(52));
 
 //			System.out.println(service.deletePhoneNumbersOfPerson(1, Set.of(2222222222L, 3333333333L)));
 
 			// 12. Delete PhoneNumber by regNo.
-//			System.out.println(service.deletePhonesNumberByRegNo(1161));
+//			System.out.println(service.deletePhoneNumberByRegNo(1021));
 
 			// 13. Delete all PhoneNumber records.
 //			System.out.println(service.deletePhoneNumber());
