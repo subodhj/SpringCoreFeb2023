@@ -87,7 +87,7 @@ public interface ICoronaVaccineRepo extends JpaRepository<CoronaVaccine, Long> {
 	/* CREATE SEQUENCE  "SCOTT"."CORONA_VACCINE_REG_NO_SEQ"  MINVALUE 1000 MAXVALUE 100000 INCREMENT BY 1 START WITH 1000 CACHE 20 NOORDER  NOCYCLE ; */
 	@Modifying
 //	@Query(value = "INSERT INTO CORONA_VACCINE VALUES(?,?,?,?,?,?	)", nativeQuery = true)
-	@Query(value = "INSERT INTO CORONA_VACCINE VALUES(CORONA_VACCINE_REG_NO_SEQ.NEXTVAL,?,?,?,?,?	)", nativeQuery = true)
+	@Query(value = "INSERT INTO CORONA_VACCINE VALUES(CORONA_VACCINE_REG_NO_SEQ.NEXTVAL,?,?,?,?,?)", nativeQuery = true)
 	@Transactional
 //	int insertCoronaVaccine(Long regNo, String company, String country, int doses, String name, double price);
 	int insertCoronaVaccine(String company, String country, int doses, String name, double price);
@@ -100,6 +100,6 @@ public interface ICoronaVaccineRepo extends JpaRepository<CoronaVaccine, Long> {
 	@Modifying
 	@Query(value = "CREATE TABLE TEMPX(col1 number(5), col2 varchar2(20))", nativeQuery = true)
 	@Transactional
-	int createTempXTable();       // create=construct=generate
+	int createTempXTable(); // create=construct=generate
 
 }
