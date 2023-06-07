@@ -1,5 +1,7 @@
 package com.nt.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	@Override
 	public String registerEmployee(Employee doc) {
 		return "Employee registered with Id: " + empRepo.save(doc).getEno();
+	}
+
+	@Override
+	public List<Employee> getEmployee() {
+		return empRepo.findAll();
 	}
 
 }

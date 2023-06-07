@@ -19,8 +19,8 @@ public class Employee {
 	@Id
 	private Integer eno;
 	private String ename;
-//	private LocalDateTime dob;
-	private LocalDate dob;
+	private LocalDateTime dob;
+//	private LocalDate dob;
 	private boolean isMarried;
 	private String eadd;
 	private Set<Long> phoneNos;
