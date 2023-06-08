@@ -12,16 +12,16 @@ import lombok.Setter;
 @Setter
 @Getter
 public class DrivingLicence {
-
-	public DrivingLicence() {
-		System.out.println("DrivingLicence : 0-param constructor");
-	}
-
 	@Id
 	private Long lid;
 	private String type;
 	private LocalDateTime expiryDate;
-	private Citizen citizen;
+	// HAS-A property for One-to-One Association.
+	private Citizen citizen; // not required for Uni-Directional Association.
+
+	public DrivingLicence() {
+		System.out.println("DrivingLicence : 0-param constructor");
+	}
 
 	@Override
 	public String toString() {

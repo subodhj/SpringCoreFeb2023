@@ -10,16 +10,15 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Citizen {
-
-	public Citizen() {
-		System.out.println("Citizen : 0-param constructor");
-	}
-
 	@Id
 	private Integer cid;
 	private String name;
 	private String addr;
-	private DrivingLicence licence;
+	private DrivingLicence licence; // HAS-A property for One-to-One Association.
+
+	public Citizen() {
+		System.out.println("Citizen : 0-param constructor");
+	}
 
 	@Override
 	public String toString() {
