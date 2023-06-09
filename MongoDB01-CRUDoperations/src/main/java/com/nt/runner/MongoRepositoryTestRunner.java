@@ -24,10 +24,10 @@ public class MongoRepositoryTestRunner implements CommandLineRunner {
 
 			// 1. Save Customer document.
 			/*Customer cust = new Customer();
-			cust.setCno(1001);
-			cust.setCname("Sri Rama");
-			cust.setCadd("UP");
-			cust.setBillAmt(4500.0);
+			cust.setCno(3006);
+			cust.setCname("Paramesh");
+			cust.setCadd("TS");
+			cust.setBillAmt(3500.0);
 			System.out.println(service.registerCustomer(cust));*/
 
 			// 2.Save Customer document with a new property.

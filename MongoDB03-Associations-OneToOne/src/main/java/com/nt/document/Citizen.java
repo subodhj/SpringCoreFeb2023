@@ -1,5 +1,7 @@
 package com.nt.document;
 
+import java.io.Serializable;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,7 +11,7 @@ import lombok.Setter;
 @Document
 @Setter
 @Getter
-public class Citizen {
+public class Citizen  implements Serializable{
 	@Id
 	private Integer cid;
 	private String name;

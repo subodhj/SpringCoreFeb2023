@@ -7,17 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.nt.document.Citizen;
 import com.nt.document.DrivingLicence;
-import com.nt.repository.CitizenRepo;
-import com.nt.repository.DrivingLicenceRepo;
+import com.nt.repository.ICitizenRepo;
+import com.nt.repository.IDrivingLicenceRepo;
 
 @Service("rtaService")
 public class RTAMgmtServiceImpl implements IRTAMgmtService {
 
 	@Autowired
-	private CitizenRepo citizenRepo;
+	private ICitizenRepo citizenRepo;
 
 	@Autowired
-	private DrivingLicenceRepo licenceRepo;
+	private IDrivingLicenceRepo licenceRepo;
 
 	@Override
 	public String registerCitizenWithDrivingLicence(Citizen citizen) {

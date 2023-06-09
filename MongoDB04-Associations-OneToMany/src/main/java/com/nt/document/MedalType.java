@@ -1,6 +1,8 @@
 package com.nt.document;
 
-public enum MedalType {
+import java.io.Serializable;
+
+public enum MedalType implements Serializable {
 
 	GOLD, SILVER, BRONZE;
 

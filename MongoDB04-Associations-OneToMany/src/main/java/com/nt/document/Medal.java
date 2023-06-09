@@ -1,5 +1,6 @@
 package com.nt.document;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
 import org.springframework.data.annotation.Id;
@@ -9,7 +10,7 @@ import lombok.Data;
 
 @Document
 @Data
-public class Medal {
+public class Medal implements Serializable{
 	@Id
 	private String id;
 	private MedalType type;

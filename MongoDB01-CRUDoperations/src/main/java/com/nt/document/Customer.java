@@ -13,9 +13,9 @@ import lombok.RequiredArgsConstructor;
 
 @Document
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 //@AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Customer implements Serializable {
 
 	@Id

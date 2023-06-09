@@ -4,6 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.nt.document.Employee;
 
-public interface EmployeeRepo extends MongoRepository<Employee, Integer> {
+public interface IEmployeeRepo extends MongoRepository<Employee, Integer> {
 
 }

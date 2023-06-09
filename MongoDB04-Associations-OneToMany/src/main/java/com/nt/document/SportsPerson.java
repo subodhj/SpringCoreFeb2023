@@ -1,5 +1,6 @@
 package com.nt.document;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import lombok.Data;
 
 @Document
 @Data
-public class SportsPerson {
+public class SportsPerson implements Serializable{
 	@Id
 	private Long id;
 	private String name;

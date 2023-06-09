@@ -1,5 +1,6 @@
 package com.nt.document;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import org.springframework.data.annotation.Id;
@@ -9,7 +10,7 @@ import lombok.Data;
 
 @Document
 @Data
-public class Sport {
+public class Sport implements Serializable {
 	@Id
 	private Integer id;
 	private String name;

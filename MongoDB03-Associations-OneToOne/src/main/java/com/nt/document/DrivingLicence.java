@@ -1,5 +1,6 @@
 package com.nt.document;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Document
 @Setter
 @Getter
-public class DrivingLicence {
+public class DrivingLicence implements Serializable {
 	@Id
 	private Long lid;
 	private String type;

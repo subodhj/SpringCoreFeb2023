@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nt.document.Employee;
-import com.nt.repo.EmployeeRepo;
+import com.nt.repo.IEmployeeRepo;
 
 @Service("emService")
 public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 
 	@Autowired
-	private EmployeeRepo empRepo;
+	private IEmployeeRepo empRepo;
 
 	@Override
 	public String registerEmployee(Employee doc) {

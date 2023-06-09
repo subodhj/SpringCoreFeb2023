@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nt.document.SportsPerson;
-import com.nt.repository.SportsPersonRepo;
+import com.nt.repository.ISportsPersonRepo;
 
 @Service("samService")
 public class SportsAuthorityMgmtServiceImpl implements ISportsAuthorityMgmtService {
 
 	@Autowired
-	private SportsPersonRepo sportsPersonRepo;
+	private ISportsPersonRepo sportsPersonRepo;
 
 	@Override
 	public String registerSportsPerson(SportsPerson sportsPerson) {

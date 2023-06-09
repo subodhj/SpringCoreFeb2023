@@ -2,8 +2,8 @@ package com.nt.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.nt.document.Sport;
+import com.nt.document.Medal;
 
-public interface SportRepo extends MongoRepository<Sport, Integer> {
+public interface IMedalRepo extends MongoRepository<Medal, String> {
 
 }

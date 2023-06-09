@@ -1,6 +1,6 @@
 package com.nt.document;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Document
 @Data
-public class Employee {
+public class Employee implements Serializable{
 
 	@Id
 	private Integer eno;

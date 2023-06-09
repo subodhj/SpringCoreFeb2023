@@ -4,6 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.nt.document.Citizen;
 
-public interface CitizenRepo extends MongoRepository<Citizen, Integer> {
+public interface ICitizenRepo extends MongoRepository<Citizen, Integer> {
 
 }
