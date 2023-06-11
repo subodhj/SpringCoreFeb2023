@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Document
 @Data
-public class Medal implements Serializable{
+public class Medal implements Serializable {
 	@Id
 	private String id;
 	private MedalType type;
@@ -22,9 +22,13 @@ public class Medal implements Serializable{
 	}
 
 	public String getPrizeMoney() {
-		// Use DecimalFormat to format a double.
-		DecimalFormat df = new DecimalFormat("#");
-		return df.format(prizeMoney);
+		/*	if (prizeMoney != null) {
+		// Use DecimalFormat to format a double value.
+				DecimalFormat format = new DecimalFormat("#");
+				return format.format(prizeMoney);
+			}
+			return null;*/
+		return prizeMoney != null ? new DecimalFormat("#").format(prizeMoney) : null;
 	}
 
 	@Override
