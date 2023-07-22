@@ -41,8 +41,8 @@ public class EmployeeValidator implements Validator {
 		if (emp.getSal() == null)
 			errors.rejectValue("sal", "emp.sal.required");
 		// Numeric rule for sal.
-		else if (emp.getSal().isNaN())
-			errors.rejectValue("sal", "emp.sal.numeric");
+		/*else if (emp.getSal().isNaN())
+			errors.rejectValue("sal", "emp.sal.numeric");*/
 		// Range rule for sal.
 		else if (emp.getSal() < 10000 || emp.getSal() > 1000000)
 			errors.rejectValue("sal", "emp.sal.range");
@@ -51,12 +51,11 @@ public class EmployeeValidator implements Validator {
 		if (emp.getDeptno() == null)
 			errors.rejectValue("deptno", "emp.deptno.required");
 		// Numeric rule for deptno.
-		else if (((Float) emp.getDeptno().floatValue()).isNaN())
-			errors.rejectValue("deptno", "emp.deptno.numeric");
+		/*else if (((Float) emp.getDeptno().floatValue()).isNaN())
+			errors.rejectValue("deptno", "emp.deptno.numeric");*/
 		// Range rule for deptno.
 		else if (emp.getDeptno() < 10 || emp.getDeptno() > 100)
 			errors.rejectValue("deptno", "emp.deptno.range");
-
 	}
 
 }// class

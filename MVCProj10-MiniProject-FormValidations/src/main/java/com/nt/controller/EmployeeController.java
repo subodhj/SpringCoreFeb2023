@@ -57,6 +57,12 @@ public class EmployeeController {
 			if (errors.hasErrors())
 				return "add_employee";
 		}
+		// Check for application/b.logic errors.
+		if (emp.getJob().equalsIgnoreCase("PRESIDENT") || emp.getJob().equalsIgnoreCase("Director")) {
+			errors.rejectValue("job", "emp.job.restriction");
+			return "add_employee";
+		}
+
 		// Use Service to insert a record into emp table.
 		String result = service.insertEmployee(emp);
 		// Add result to RedirectAttributes.
@@ -94,6 +100,11 @@ public class EmployeeController {
 			// Return LVN in case of errors.
 			if (errors.hasErrors())
 				return "modify_employee";
+		}
+		// Check for application/b.logic errors.
+		if (emp.getJob().equalsIgnoreCase("President") || emp.getJob().equalsIgnoreCase("Director")) {
+			errors.rejectValue("job", "emp.job.restriction");
+			return "modify_employee";
 		}
 		// Use Service to edit a record in emp table.
 		String result = service.updateEmployee(emp);
