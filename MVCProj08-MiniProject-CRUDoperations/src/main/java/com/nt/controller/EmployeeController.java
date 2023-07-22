@@ -15,8 +15,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.nt.model.Employee;
 import com.nt.service.IEmployeeMgmtService;
 
-import jakarta.servlet.http.HttpSession;
-
 @Controller
 public class EmployeeController {
 
@@ -41,7 +39,7 @@ public class EmployeeController {
 	@GetMapping("/insertEmp")
 	public String showAddEmployeeForm(@ModelAttribute("emp") Employee emp) {
 		// Return LVN.
-		return "add_employee_form";
+		return "add_employee";
 	}
 
 	@PostMapping("/insertEmp")
@@ -71,7 +69,7 @@ public class EmployeeController {
 		// Assign the Employee object with persistent data to ModelAttribute Employee
 		// object.
 		BeanUtils.copyProperties(employee, emp);
-		return "add_employee_form";
+		return "modify_employee";
 	}
 
 	@PostMapping("/editEmp")

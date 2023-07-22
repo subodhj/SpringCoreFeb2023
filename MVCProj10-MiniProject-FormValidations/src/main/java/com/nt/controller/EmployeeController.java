@@ -44,7 +44,7 @@ public class EmployeeController {
 	@GetMapping("/insertEmp")
 	public String showAddEmployeeForm(@ModelAttribute("emp") Employee emp) {
 		// Return LVN.
-		return "add_employee_form";
+		return "add_employee";
 	}
 
 	@PostMapping("/insertEmp")
@@ -55,7 +55,7 @@ public class EmployeeController {
 			validator.validate(emp, errors);
 			// Return LVN in case of errors.
 			if (errors.hasErrors())
-				return "add_employee_form";
+				return "add_employee";
 		}
 		// Use Service to insert a record into emp table.
 		String result = service.insertEmployee(emp);
@@ -82,7 +82,7 @@ public class EmployeeController {
 		// Assign the Employee object with persistent data to ModelAttribute Employee
 		// object.
 		BeanUtils.copyProperties(employee, emp);
-		return "add_employee_form";
+		return "modify_employee";
 	}
 
 	@PostMapping("/editEmp")
@@ -93,7 +93,7 @@ public class EmployeeController {
 			validator.validate(emp, errors);
 			// Return LVN in case of errors.
 			if (errors.hasErrors())
-				return "add_employee_form";
+				return "modify_employee";
 		}
 		// Use Service to edit a record in emp table.
 		String result = service.updateEmployee(emp);
