@@ -29,6 +29,8 @@
 			<td>DepartmentNo</td>
 			<td><f:input path="deptno" /> <f:errors path="deptno" cssStyle="color:red" /> <span id="deptnoErr" style="color: red;"></span></td>
 		</tr>
+		<%-- <tr><f:hidden path="vflag"/></tr> --%>
+		<tr><f:hidden path="isVerified"/></tr>
 		<tr>
 			<!-- <td><input type="submit" value="Register"></td> -->
 			<td colspan="2" align="right"> <input type="image" src="images/submit-01.png" height="40" width="70">

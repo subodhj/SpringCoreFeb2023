@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
@@ -47,6 +49,12 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		// Use Repository to delete required record.
 		empRepo.deleteById(empno);
 		return "Deleted Employee with Id: " + empno;
+	}
+
+	@Override
+	public Page<Employee> getEmployeeByPage(Pageable pageable) {
+		// Use Repository to get required records per page.
+		return empRepo.findAll(pageable);
 	}
 
 }// class

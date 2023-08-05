@@ -1,4 +1,6 @@
 function validate(frm) {
+		
+	alert("From JavaScript : Client side form validations");
 
 	// Empty form validation error messages.
 	document.getElementById("enameErr").innerHTML = "";
@@ -78,6 +80,9 @@ function validate(frm) {
 		document.getElementById("deptnoErr").innerHTML = "Department No. must be in the range of 10 to 100. (cs)";
 		isValidated = false;
 	}
+
+	// frm.vflag.value = "yes";
+	frm.isVerified.value = true;
 
 	return isValidated;
 } // validate(-)

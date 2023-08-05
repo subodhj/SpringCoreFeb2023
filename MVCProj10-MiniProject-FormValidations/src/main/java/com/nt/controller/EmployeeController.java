@@ -1,10 +1,13 @@
 package com.nt.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,12 +34,24 @@ public class EmployeeController {
 		return "home";
 	}
 
-	@GetMapping("/emp_report")
+	/*@GetMapping("/emp_report")
 	public String showEmployeeDetails(Map<String, Object> map) {
 		// Use service to get all records from emp table.
 		List<Employee> empsList = service.getAllEmployees();
 		// Keep results as model attribute.
 		map.put("empsList", empsList);
+		// Return LVN.
+		return "employee_report";
+	}*/
+
+	@GetMapping("/emp_report")
+	public String showEmployeeDetails(
+			@PageableDefault(page = 0, size = 3, sort = "job", direction = Direction.ASC) Pageable pageable,
+			Map<String, Object> map) {
+		// Use service to get all records from emp table.
+		Page<Employee> page = service.getEmployeeByPage(pageable);
+		// Keep results as model attribute.
+		map.put("page", page);
 		// Return LVN.
 		return "employee_report";
 	}
@@ -47,7 +62,7 @@ public class EmployeeController {
 		return "add_employee";
 	}
 
-	@PostMapping("/insertEmp")
+	/*@PostMapping("/insertEmp")
 	public String saveEmployee(RedirectAttributes ra, @ModelAttribute("emp") Employee emp, BindingResult errors) {
 		// Check whether Validator can validate the given Command class instance.
 		if (validator.supports(emp.getClass())) {
@@ -61,6 +76,27 @@ public class EmployeeController {
 		if (emp.getJob().equalsIgnoreCase("PRESIDENT") || emp.getJob().equalsIgnoreCase("Director")) {
 			errors.rejectValue("job", "emp.job.restriction");
 			return "add_employee";
+		}*/
+
+	@PostMapping("/insertEmp")
+	public String saveEmployee(RedirectAttributes ra, @ModelAttribute("emp") Employee emp, BindingResult errors) {
+
+//		if (emp.getVflag().equalsIgnoreCase("no")) {
+		if (emp.getIsVerified() == false) {
+			// Check whether Validator can validate the given Command class instance.
+			if (validator.supports(emp.getClass())) {
+				// Validate for errors.
+				validator.validate(emp, errors);
+				// Return LVN in case of errors.
+				if (errors.hasErrors())
+					return "add_employee";
+			}
+		}
+
+		// Check for application/b.logic errors.
+		if (emp.getJob().equalsIgnoreCase("PRESIDENT") || emp.getJob().equalsIgnoreCase("Director")) {
+			errors.rejectValue("job", "emp.job.restriction");
+			return "add_employee";
 		}
 
 		// Use Service to insert a record into emp table.
@@ -69,6 +105,7 @@ public class EmployeeController {
 		ra.addFlashAttribute("resultMsg", result);
 		// Redirect request to /emp_report .
 		return "redirect:emp_report";
+
 	}
 
 	/*@PostMapping("/insertEmp")
@@ -93,13 +130,16 @@ public class EmployeeController {
 
 	@PostMapping("/editEmp")
 	public String editEmployee(RedirectAttributes ra, @ModelAttribute("emp") Employee emp, BindingResult errors) {
-		// Check whether Validator validate the given Command class instance.
-		if (validator.supports(emp.getClass())) {
-			// Validate for errors.
-			validator.validate(emp, errors);
-			// Return LVN in case of errors.
-			if (errors.hasErrors())
-				return "modify_employee";
+//		if (emp.getVflag().equalsIgnoreCase("no")) {
+		if (emp.getIsVerified() == false) {
+			// Check whether Validator validate the given Command class instance.
+			if (validator.supports(emp.getClass())) {
+				// Validate for errors.
+				validator.validate(emp, errors);
+				// Return LVN in case of errors.
+				if (errors.hasErrors())
+					return "modify_employee";
+			}
 		}
 		// Check for application/b.logic errors.
 		if (emp.getJob().equalsIgnoreCase("President") || emp.getJob().equalsIgnoreCase("Director")) {
