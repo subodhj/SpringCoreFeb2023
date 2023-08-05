@@ -21,8 +21,7 @@
 					<td style="text-align: center;">${emp.deptno}</td>
 					<td style="text-align: center;">
 					     <a href="editEmp?empno=${emp.empno}">
-					        <img src="images/edit-03.png" height="30" width="30" align="middle">
-						 </a> &nbsp;&nbsp; 
+					        <img src="images/edit-03.png" height="30" width="30" align="middle"></a> &nbsp;&nbsp; 
 						 <a href="deleteEmp?empno=${emp.empno}" onclick="return confirm('Do you want to delete')">
 						   <img src="images/delete-03.png" height="30" width="30" align="middle">
 						 </a>
