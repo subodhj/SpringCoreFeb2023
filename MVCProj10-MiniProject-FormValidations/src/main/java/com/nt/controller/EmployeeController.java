@@ -46,7 +46,7 @@ public class EmployeeController {
 
 	@GetMapping("/emp_report")
 	public String showEmployeeDetails(
-			@PageableDefault(page = 0, size = 3, sort = "job", direction = Direction.ASC) Pageable pageable,
+			@PageableDefault(page = 0, size = 3, sort = "empno", direction = Direction.ASC) Pageable pageable,
 			Map<String, Object> map) {
 		// Use service to get all records from emp table.
 		Page<Employee> page = service.getEmployeeByPage(pageable);

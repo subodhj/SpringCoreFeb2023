@@ -30,9 +30,21 @@
 			</c:forEach>
 		</table>
 		<p style="text-align: center">
-		  <c:forEach var="i" begin="1" end="${page.getTotalPages()}" step="1">
-		     [<a href="emp_report?page=${i-1}">${i}</a>] &nbsp;
-		  </c:forEach>
+		   <c:if test="${!page.isFirst()}">
+		      [<a href="emp_report?page=0">First</a>] &nbsp;
+		   </c:if>
+		   <c:if  test="${!page.isFirst()}">
+		      [<a href="emp_report?page=${page.getNumber()-1}"><img src="images/arrow-right-previous.jpg" height="10" width="10" align="bottom"></a>] &nbsp;
+		   </c:if>
+		   <c:forEach var="i" begin="1" end="${page.getTotalPages()}" step="1">
+		      [<a href="emp_report?page=${i-1}">${i}</a>] &nbsp;
+		   </c:forEach>
+		   <c:if test="${!page.isLast()}">
+		      [<a href="emp_report?page=${page.getNumber()+1}"><img src="images/arrow-left-next.jpg" height="10" width="10" align="bottom"></a>] &nbsp;
+		   </c:if>
+		   <c:if test="${!page.isLast()}">
+		      [<a href="emp_report?page=${page.getTotalPages()-1}">Last</a>]
+		   </c:if>
 		</p>
 	</c:when>
 	<c:otherwise>
