@@ -31,16 +31,28 @@
 		</table>
 		<p style="text-align: center">
 		   <c:if test="${!page.isFirst()}">
-		      [<a href="emp_report?page=0">First</a>] &nbsp;
+		      [<a href="emp_report?page=0">First</a>]&nbsp;
 		   </c:if>
 		   <c:if  test="${!page.isFirst()}">
-		      [<a href="emp_report?page=${page.getNumber()-1}"><img src="images/arrow-right-previous.jpg" height="10" width="10" align="bottom"></a>] &nbsp;
-		   </c:if>
+		      <%-- [<a href="emp_report?page=${page.getNumber()-1}"><img src="images/arrow-right-previous.jpg" height="10" width="10" align="bottom"></a>]&nbsp; --%>
+		      <%-- [<a href="emp_report?page=${page.getNumber()-1}">&larr; prev</a>]&nbsp; --%>		   
+		      [<a href="emp_report?page=${page.getNumber()-1}">Previous</a>]&nbsp;		   
+		   </c:if>	
 		   <c:forEach var="i" begin="1" end="${page.getTotalPages()}" step="1">
-		      [<a href="emp_report?page=${i-1}">${i}</a>] &nbsp;
+		     <c:choose>
+		     <c:when test="${page.getNumber()==i-1}">
+		      <%-- [<a href="#">${i}</a>]&nbsp; --%>
+		      [${i}]&nbsp;
+		     </c:when>
+		     <c:otherwise>
+		      [<a href="emp_report?page=${i-1}">${i}</a>]&nbsp;
+		     </c:otherwise>
+		     </c:choose>
 		   </c:forEach>
 		   <c:if test="${!page.isLast()}">
-		      [<a href="emp_report?page=${page.getNumber()+1}"><img src="images/arrow-left-next.jpg" height="10" width="10" align="bottom"></a>] &nbsp;
+		      <%-- [<a href="emp_report?page=${page.getNumber()+1}"><img src="images/arrow-left-next.jpg" height="10" width="10" align="bottom"></a>]&nbsp; --%>
+		     <%--  [<a href="emp_report?page=${page.getNumber()+1}">next &rarr;</a>]&nbsp; --%>
+		      [<a href="emp_report?page=${page.getNumber()+1}">Next</a>]&nbsp;
 		   </c:if>
 		   <c:if test="${!page.isLast()}">
 		      [<a href="emp_report?page=${page.getTotalPages()-1}">Last</a>]
