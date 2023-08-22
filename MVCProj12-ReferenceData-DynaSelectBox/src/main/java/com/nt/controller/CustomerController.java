@@ -50,8 +50,10 @@ public class CustomerController {
 	public String populateStates(@RequestParam("country") String country, Map<String, Object> map,
 			@ModelAttribute("cust") Customer customer) {
 		List<String> statesList = null;
-		// Use Service class method.
-		statesList = service.getStates(country);
+		// Use Service class method to get states from properties file.
+//		statesList = service.getStates(country);
+		// Use Service class method to get states from Database.
+		statesList = service.searchStates(country);
 		// Keep result as Model attribute.
 		map.put("statesList", statesList);
 		// Redirect request to /customer_registration.

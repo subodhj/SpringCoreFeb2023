@@ -88,7 +88,7 @@ public class OneToManyBiTestRunner implements CommandLineRunner {
 //			System.out.println(service.registerPhoneNumberForPerson(52, Set.of(ph2)));
 
 			// 5. Get Person record by Id value.
-//			Person person = service.getPerson(3302);
+//			Person person = service.getPerson(3301);
 //			 System.out.println(person + "\n" + person.getPhoneNos());
 //			System.out.println("parent -> " + person);
 //			System.out.println("child -> " + person.getPhoneNos());

@@ -1,5 +1,6 @@
 package com.nt.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -11,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
+import com.nt.model.Country;
+import com.nt.model.State;
+import com.nt.repository.ICountryRepo;
 import com.nt.repository.IHumanActivitiesRepo;
 
 @Service("custService")
@@ -18,6 +22,9 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	@Autowired
 	private IHumanActivitiesRepo humanRepo;
+
+	@Autowired
+	private ICountryRepo countryRepo;
 
 	@Autowired
 	private Environment environment;
@@ -79,6 +86,18 @@ public class CustomerServiceImpl implements ICustomerService {
 		// Sort the states in the List collection.
 		Collections.sort(statesList);
 		// Return the List collection.
+		return statesList;
+	}
+
+	@Override
+	public List<String> searchStates(String country) {
+		Country cntry = countryRepo.getCountry(country);
+		System.out.println(cntry);
+		List<State> states = cntry.getStates();
+		List<String> statesList = new ArrayList<>();
+		states.forEach(state -> statesList.add(state.getName()));
+		Collections.sort(statesList);
+		System.out.println(statesList);
 		return statesList;
 	}
 
