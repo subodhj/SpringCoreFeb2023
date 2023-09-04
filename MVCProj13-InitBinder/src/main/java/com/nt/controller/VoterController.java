@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -34,10 +35,25 @@ public class VoterController {
 		return "voter_registration";
 	}
 
-	@PostMapping("/register_voter")
+	/*@PostMapping("/register_voter")
 	public String registerVoter(Map<String, Object> model, @ModelAttribute Voter voter) {
 		int result = 0;
 		// Use Service.
+		result = voterService.registerVoter(voter);
+		// Add result to
+		model.put("voterInfo", result);
+		// return LVN.
+		return "result";
+	}*/
+
+	@PostMapping("/register_voter")
+	public String registerVoter(Map<String, Object> model, @ModelAttribute Voter voter, BindingResult errors) {
+		System.out.println("VoterController : registerVoter()");
+		Voter result = null;
+		// Use Service.
+		System.out.println(voter);
+		if (errors.hasErrors())
+			return "voter_registration";
 		result = voterService.registerVoter(voter);
 		// Add result to
 		model.put("voterInfo", result);
@@ -47,8 +63,9 @@ public class VoterController {
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-mmm-yyyy");
+		System.out.println("VoterController : initBinder()");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	//		SimpleDateFormat sdf = new SimpleDateFormat("dd-mmm-yyyy");
 		CustomDateEditor cde = new CustomDateEditor(sdf, false);
 		binder.registerCustomEditor(Date.class, cde);
 	}

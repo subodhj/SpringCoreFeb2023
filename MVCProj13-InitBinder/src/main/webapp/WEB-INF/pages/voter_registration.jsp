@@ -3,7 +3,11 @@
 <h1 style="text-align: center; color: red">Voter Registration</h1>
 <br><br>
 <f:form action="register_voter" modelAttribute="voter">
+
 	<table border="0" bgcolor="red" align="center">
+	<p style="color: red;">
+	<f:errors path="*" />
+	</p>
 		<tr bgcolor="lime">
 			<td>Name</td>
 			<td><f:input path="name" /></td>
@@ -22,7 +26,9 @@
 			<input type="reset" value="Cancel" style="color: red">
 			</td>
 		</tr>
+			
 	</table>
+
 </f:form>
 <br><br>
 <h4 style="text-align:center"><a style="color: brown" href="./">Home</a></h4>

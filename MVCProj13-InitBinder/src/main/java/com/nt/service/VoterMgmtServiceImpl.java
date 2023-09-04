@@ -12,9 +12,14 @@ public class VoterMgmtServiceImpl implements IVoterMgmtService {
 	@Autowired
 	private IVoterRepo voterRepo;
 
-	@Override
+	/*@Override
 	public int registerVoter(Voter voter) {
 		return voterRepo.save(voter).getVid();
-	}
+	}*/
 
+	@Override
+	public Voter registerVoter(Voter voter) {
+		return voterRepo.save(voter);
+	}
+	
 }

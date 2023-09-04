@@ -4,6 +4,7 @@ import com.nt.model.Voter;
 
 public interface IVoterMgmtService {
 	
-	int registerVoter(Voter voter);
+//	int registerVoter(Voter voter);
+	Voter registerVoter(Voter voter);
 
 }
